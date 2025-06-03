@@ -1,0 +1,76 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: white;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+.sky {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.pigeon {
+  position: absolute;
+  top: 30%;
+  left: -200px;
+  display: flex;
+  align-items: center;
+  animation: fly 5s ease-in-out forwards;
+}
+
+.pigeon img{
+  width: 300px;
+}
+
+.note {
+  margin-left: 10px;
+  cursor: pointer;
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background: #fff;
+  border: 2px solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-10deg) translate(-170%, 20%);
+  transition: transform 0.5s ease;
+
+}
+
+.note-front {
+  font-size: 24px;
+}
+
+.note-open {
+  width: 200px;
+  display: none;
+  position: absolute;
+  top: -80px;
+  left: -20px;
+  background: white;
+  border: 1px solid #333;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.note.open .note-front {
+  display: none;
+}
+
+.note.open .note-open {
+  display: block;
+}
+
+@keyframes fly {
+  to {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
